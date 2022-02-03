@@ -1,0 +1,87 @@
+@keyframes bounce {
+  0%, 60%, 100%, 10% {
+    -webkit-transform: trasnlateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: trasnlateY(-15px);
+    transform: translateY(-10px);
+  }
+
+  80% {
+    -webkit-transform: trasnlateY(-10px);
+    transform: translateY(-10px);
+  }
+
+}
+.App {
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.btn{
+	font-family: arial;
+	font-size: 18px;
+	text-transform: uppercase;
+	font-weight: 700;
+	padding: 10px 8px;
+	width: 200px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.btn-green{
+	position: relative;
+	top: 450px;
+	background: #209915;
+	color: #fff;
+	border: 1px solid #b8b8b8;
+}
+
+.btn-green:hover{
+  animation: bounce 1s;
+	background: #073607;
+	color: #fff;
+	border: 1px solid #073107;
+}
+
+
+
+.papeldeparede {
+	background-image:url(logo1.jpg);
+	background-attachment:fixed;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color:#000;
+}
