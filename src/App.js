@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import './App.css';
 import Teacher1 from './giftoken.gif';
-import Teacher2 from './logo1.jpg';
 
 const App = () =>  {
   const [isConnected, setConnectedStatus] = useState(false)
@@ -9,12 +8,8 @@ const App = () =>  {
   const [walletAddress, setWallet] = useState('')
 
   const connectWalletPressed = async () => {
-      if(isConnected) return alert(
-        "Conta já conectada! " +
-        String(walletAddress).substring(0, 5) +
-        "..." +
-        String(walletAddress).substring(38)
-      )
+      if(isConnected) alert("You are connected!");
+      
       
       const walletResponse = await connectWallet()
       setConnectedStatus(walletResponse.connectedStatus)
@@ -28,58 +23,70 @@ const App = () =>  {
             const address = await window.ethereum.enable() 
             const obj = {
                 connectedStatus:true,
-                status:"Conectado",
+                status:"Connected",
                 address: address
             }
             return obj;
         } catch (error) {
             return {
                 connectedStatus: false,
-                status: "Erro durante a conexão com a conta"
+                status: "Error connecting to account"
             }
         }
     } else {
         return {
             connectedStatus: false,
-            status: "Instale a Metamask no seu browser: https://metamask.io/download.html"
+            status: "Install Metamask in your browser: https://metamask.io/download.html"
         }
     }
   }
 
   const resgate = async () => {
     if(isConnected){ 
-    return alert("Parabéns, você ganhou um Monza 1990!")
+      
+      return document.getElementById("demo").innerHTML = "Carteira: " + String(walletAddress).substring(0, 5) +
+      "..." +
+      String(walletAddress).substring(38),
+
+      setTimeout(function() {
+        alert("Parabéns, você ganhou um Monza 1990!");
+      }, 500);  
+
     } else { return alert("Connect to Metamask")
       }
       
-    }   
-  
+    }
+    
 
 
   return (
     <div className="App">
-      {/* Sessão da Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div className="container">
-          <div className="collapse navbar-collapse" id="navbarText">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            </ul>
-            <span className="App.css">
-              <div className='header-container flex row center-center full-view' >
-              </div>
-              <button className="btn btn-green" onClick={connectWalletPressed}>
-                Connect 🦊
-              </button><p></p>
-              <button className="btn btn-green" 
-              onClick={resgate}>Present 🎁 </button>
-            </span>
+      <div className="main">
+        <div className="Center">
+          <div className="menu">
+            <div className="logo">
+            </div>
+            <div className="item-menu">        
+            <time>
+              <a id="demo"></a></time>
+            </div>
           </div>
         </div>
-      </nav>
-      <img src={Teacher1}/>
-    </div>
-    
-    
+      </div>
+                <p></p>
+                <p></p>
+        <div className="logo">
+          <img src={Teacher1}/></div>
+          <div className="menuconnect">
+          <button className="menuconnect menuconnect-green" onClick={connectWalletPressed}>
+          🦊 Connect
+              </button><p></p>
+              <button className="menuconnect menu2" 
+                onClick={resgate}>Present 🎁
+              </button>
+          </div>
+      </div>   
+
   );
 }
 

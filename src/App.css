@@ -17,12 +17,8 @@
 }
 .App {
   text-align: center;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  padding:0;
+  margin: 0;
 }
 
 .App-header {
@@ -36,47 +32,33 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 .btn{
 	font-family: arial;
 	font-size: 18px;
 	text-transform: uppercase;
-	font-weight: 700;
+	font-weight: 200;
 	padding: 10px 8px;
-	width: 200px;
+	width: 150px;
 	border-radius: 10px;
 	cursor: pointer;
 }
 
 .btn-green{
 	position: relative;
-	top: 450px;
-	background: #209915;
+	top: 280px;
+	background: #156622;
 	color: #fff;
-	border: 1px solid #b8b8b8;
+	border: 1px solid #156622;
 }
 
 .btn-green:hover{
   animation: bounce 1s;
 	background: #073607;
 	color: #fff;
-	border: 1px solid #073107;
 }
 
 
-
+/* papeldeparede */
 .papeldeparede {
 	background-image:url(logo1.jpg);
 	background-attachment:fixed;
@@ -84,4 +66,118 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-color:#000;
+}
+
+/* editar posição logo */
+.logo{
+  position: relative;
+  top: -150px;
+  right: 869px;
+}
+/*cabeçario */
+.center{
+	max-width: 100px;
+  margin: 0 auto;
+  padding: 0 2%;
+  display: flex;
+}
+
+.main{
+  padding: 25px 0px;
+  width: 100%;
+  background-color: #042444;
+  min-height: 10px;
+}
+
+.menu{
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.menu h3{
+  color: rgb(252, 247, 247);
+}
+
+.menu a{
+  position: relative;
+  font-weight: 700;
+  left: -990px;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 2px 6px;
+  border-radius:7px;
+}
+
+/*  connect */
+
+.menuconnect{
+  position: relative;
+  left: 85%; /*esquerda*/
+	font-size: 17px;
+	text-transform: none;
+	padding: 11px 0px;
+	width: 109px;
+	border-radius: 15px;
+	cursor: pointer;
+}
+
+.menuconnect-green{
+	top: -313.6px;
+	background-color: rgb(44, 140, 255);
+	color: rgb(243, 243, 243);
+	border: 1px solid rgb(44, 140, 255);
+}
+
+.menuconnect-green:hover{
+  animation: bounce 1s;
+	color: rgb(255, 255, 255);
+}
+/*
+.efeito-6 {
+  background:  #376693;
+  transform-style: preserve-3d;
+}
+
+.efeito-6:after{
+  top: 100px;
+  left: 0px;
+  width: 100%;
+  padding: 10px;
+  position: absolute;
+  background: #3a9999;
+  border-radius: 10px;
+  box-sizing: border-box;
+  content: 'Mudou!';
+  transform-origin: left bottom;
+  transform: rotateX(90deg);
+}
+
+.efeito-6:hovert{
+  transform-origin: center bottom;
+  transform: rotateX(-90deg) translateY(100%);
+}
+*/
+
+.menu2{
+  position: relative;
+  left: -680%;
+  top: -375px;
+	font-size: 19px;
+	text-transform: none;
+	padding: 08px 0px;
+	width: 150px;
+	border-radius: 15px;
+	cursor: pointer;
+  background-color: rgb(44, 140, 255);
+	color: #fff;
+	border: 1px solid rgb(44, 140, 255);
+
+}
+
+.menu2:hover{
+  animation: bounce 1s;
+	color: rgb(255, 255, 255);
 }
