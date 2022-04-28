@@ -1,8 +1,22 @@
 body{
-    background-image:url(logo1.jpg);
+    background-image:url(corvo.jpg);
     background-attachment:fixed;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     background-color:#000;
+    background-attachment:fixed;
+    width: 100%;
+    height: 100%;
+    }
+
+
+:root {
+  --font-primary: "Baloo Da 2", serif;
+  --font-secundary: "Josefin Slab", serif;
+  --font-action: "Muli", serif;
+}
+
+html{
+  scroll-behavior: auto;
 }

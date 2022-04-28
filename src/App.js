@@ -1,6 +1,7 @@
 import { useState } from "react";
 import './App.css';
-import Teacher1 from './giftoken.gif';
+import gifnft from './gifimagem.gif';
+
 
 const App = () =>  {
   const [isConnected, setConnectedStatus] = useState(false)
@@ -41,7 +42,7 @@ const App = () =>  {
     }
   }
 
-  const resgate = async () => {
+  const mint = async () => {
     if(isConnected){ 
       
       return document.getElementById("demo").innerHTML = "Carteira: " + String(walletAddress).substring(0, 5) +
@@ -57,36 +58,42 @@ const App = () =>  {
       
     }
     
-
+    
 
   return (
-    <div className="App">
-      <div className="main">
-        <div className="Center">
-          <div className="menu">
-            <div className="logo">
-            </div>
-            <div className="item-menu">        
-            <time>
-              <a id="demo"></a></time>
-            </div>
-          </div>
-        </div>
+    <div className="App"> 
+    
+      <div className="text1" >
+        <p>Degen Ghosts is a collection of 1,000 Ghosts on the ETH 
+          <p>Blockchain</p>
+          <br></br>
+          Max 1 Mint Free per Waller
+        </p>
+        <br></br>
+        <p>0.009 Mint</p>
       </div>
-                <p></p>
-                <p></p>
-        <div className="logo">
-          <img src={Teacher1}/></div>
-          <div className="menuconnect">
-          <button className="menuconnect menuconnect-green" onClick={connectWalletPressed}>
-          🦊 Connect
-              </button><p></p>
-              <button className="menuconnect menu2" 
-                onClick={resgate}>Present 🎁
-              </button>
-          </div>
-      </div>   
 
+          
+      <div className="menu">
+          <center className="carteira" id="demo"></center>
+      </div>
+      
+
+      <div className="menuconnect">
+          <button className="menuconnect menuconnect-green" onClick={connectWalletPressed}>Connect Wallet </button> 
+      </div> 
+      
+      <div className="gif gift text" >
+        <img src={gifnft}/>
+      </div>
+      <div className="title1">
+        <h1>Degen Ghosts</h1>
+      </div>
+      
+
+      
+    
+    </div>
   );
 }
 
