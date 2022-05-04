@@ -1,12 +1,17 @@
 import { useState } from "react";
 import './App.css';
-import gifnft from './gifimagem.gif';
 
 
 const App = () =>  {
+
+
+
   const [isConnected, setConnectedStatus] = useState(false)
   const [status, setStatus] = useState('')
   const [walletAddress, setWallet] = useState('')
+  
+
+
 
   const connectWalletPressed = async () => {
       if(isConnected) alert("You are connected!");
@@ -42,21 +47,18 @@ const App = () =>  {
     }
   }
 
-  const mint = async () => {
+  const resgate = async () => {
     if(isConnected){ 
-      
-      return document.getElementById("demo").innerHTML = "Carteira: " + String(walletAddress).substring(0, 5) +
-      "..." +
-      String(walletAddress).substring(38),
 
       setTimeout(function() {
-        alert("Parabéns, você ganhou um Monza 1990!");
+        alert("Congratulations!");
       }, 500);  
 
     } else { return alert("Connect to Metamask")
       }
       
     }
+
     
     
 
@@ -71,23 +73,23 @@ const App = () =>  {
         </p>
         <br></br>
         <p>0.009 Mint</p>
+        
       </div>
 
           
       <div className="menu">
-          <center className="carteira" id="demo"></center>
       </div>
       
 
       <div className="menuconnect">
-          <button className="menuconnect menuconnect-green" onClick={connectWalletPressed}>Connect Wallet </button> 
+        
       </div> 
       
-      <div className="gif gift text" >
-        <img src={gifnft}/>
+      <div className="gif" >
+       
       </div>
       <div className="title1">
-        <h1>Degen Ghosts</h1>
+        <h1></h1>
       </div>
       
 
